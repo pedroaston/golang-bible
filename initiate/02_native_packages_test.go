@@ -2,6 +2,7 @@ package initiate
 
 import (
 	"fmt"
+	"math"
 	"math/rand"
 	"testing"
 	"time"
@@ -21,6 +22,7 @@ func TestGolangFMT(t *testing.T) {
 	fmt.Printf("This prints the integer %d \n", 1)
 	fmt.Printf("This prints the float %f \n", 3.14)
 	fmt.Printf("Is this relevant: %v \n", false)
+	fmt.Printf("Data-type %T | Data-value %v\n", 3.14, 3.14)
 
 	// Generating Strings
 	newstr := fmt.Sprintf("This string, plus this one%s plus this number %d!", ",", 666)
@@ -63,4 +65,6 @@ func TestGolangMath(t *testing.T) {
 	rand.Seed(int64(time.Now().Nanosecond()))
 	fmt.Printf("Almost allways different number: %d\n", rand.Intn(100))
 
+	// This package also has several mathematical functions
+	fmt.Println(math.Cos(math.Pi))
 }

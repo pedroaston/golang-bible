@@ -17,6 +17,14 @@ import (
 	Note: The -run flag executes every testcase that follows a certain regex
 */
 
+// Global Variable
+// can be changed
+var globalInt int = 2
+
+// Constant
+// CANNOT be changed
+const pi = 3.1415
+
 func TestBasicNumericVariables(t *testing.T) {
 
 	// Defining a variable without initializing it at the
@@ -28,6 +36,7 @@ func TestBasicNumericVariables(t *testing.T) {
 	var aFloat float32
 
 	// Define variable by initializing it with a value
+	// This is called "Typed Inference"
 	anotherNumber := 7
 
 	// Attribute value to the variable
@@ -46,4 +55,37 @@ func TestBasicNumericVariables(t *testing.T) {
 	fmt.Println(anotherNumber)
 	fmt.Println(anUnsignedInt)
 	fmt.Println(aFloat)
+	fmt.Println(globalInt)
+	fmt.Println(pi)
+}
+
+// TestDefaultValues shows some variables
+// default values upon assigning type
+func TestDefaultValues(t *testing.T) {
+
+	var intNumber int
+	var boolean bool
+	var floatNumber float32
+	var oneStr string
+
+	fmt.Println(intNumber)
+	fmt.Println(boolean)
+	fmt.Println(floatNumber)
+	// The string is "" so it is shown an empty line
+	fmt.Println(oneStr)
+}
+
+// TestTypeConversion
+func TestTypeConvertion(t *testing.T) {
+
+	var anInt int
+	var aFloat float32
+
+	anInt = 2
+	aFloat = float32(anInt)
+	fmt.Println(aFloat)
+
+	// anInt = int(aStr)
+	// The above line isn't executable
+	// there are additional packages that do this conversion
 }
